@@ -30,7 +30,7 @@ context = zmq.Context()
 print("connecting to server")
 socket = context.socket(zmq.REQ)
 
-socket.connect("tcp://127.0.0.1:8000")
+socket.connect("tcp://127.0.0.1:9000")
 
 while True:
     cmsg = input("Enter Request Message: ")
