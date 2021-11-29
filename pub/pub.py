@@ -32,12 +32,11 @@ context = zmq.Context()
 
 socket = context.socket(zmq.REP)
 
-socket.bind("tcp://127.0.0.1:8000")
-
-
+socket.bind("tcp://127.0.0.1:9000")
 while True:
     msg = socket.recv_string()
     print("Client Request: ", msg)
+    print(type(msg))
     smsg = input('Server Reply: ')
     # print(b'smsg')
     socket.send_string(smsg)
