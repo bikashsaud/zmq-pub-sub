@@ -30,11 +30,12 @@ context = zmq.Context()
 print("connecting to server")
 socket = context.socket(zmq.REQ)
 
-socket.connect("tcp://127.0.0.1:9000")
+socket.connect("tcp://192.168.0.135:5555")
 
 while True:
+    # jd = (json.dumps(d).encode('utf-8'))
     cmsg = input("Enter Request Message: ")
     socket.send_string(cmsg)
     # print('sending...', cmsg)
-    print("From Server: ", socket.recv_string())
+    print("From Server: ",  socket.recv())
     print("---")
